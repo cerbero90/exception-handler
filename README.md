@@ -1,4 +1,4 @@
-# :package_capital_name
+# Exception Handler
 
 [![Author][ico-author]][link-author]
 [![Latest Version on Packagist][ico-version]][link-packagist]
@@ -11,13 +11,6 @@
 [![Gratipay][ico-gratipay]][link-gratipay]
 
 [![SensioLabsInsight][ico-sensiolabs]][link-sensiolabs]
-
-**Note:** Replace the following placeholders with their actual values in all concerned files:
-
-- ```:package_name```
-- ```:package_capital_name```
-- ```:namespace```
-- ```:package_description```
 
 **Note:** Enable the following services for the current package:
 
@@ -42,7 +35,7 @@ PSRs you support to avoid any confusion with users and contributors.
 Via Composer
 
 ``` bash
-composer require cerbero/:package_capital_name
+composer require cerbero/exception-handler
 ```
 
 ## Usage
@@ -80,23 +73,23 @@ If you discover any security related issues, please email andrea.marco.sartori@g
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [ico-author]: http://img.shields.io/badge/author-@cerbero90-blue.svg?style=flat-square
-[ico-version]: https://img.shields.io/packagist/v/cerbero/:package_capital_name.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/cerbero/exception-handler.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/cerbero90/:package_capital_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/cerbero90/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/cerbero90/:package_name.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/cerbero90/exception-handler/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/cerbero90/exception-handler.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/cerbero90/exception-handler.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/:styleci_repo/shield
-[ico-downloads]: https://img.shields.io/packagist/dt/cerbero/:package_capital_name.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/cerbero/exception-handler.svg?style=flat-square
 [ico-gratipay]: https://img.shields.io/gratipay/cerbero.svg?style=flat-square
 [ico-sensiolabs]: https://insight.sensiolabs.com/projects/:sensiolabs_project/big.png
 
 [link-author]: https://twitter.com/cerbero90
-[link-packagist]: https://packagist.org/packages/cerbero/:package_name
-[link-travis]: https://travis-ci.org/cerbero90/:package_capital_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/cerbero90/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/cerbero90/:package_name
+[link-packagist]: https://packagist.org/packages/cerbero/exception-handler
+[link-travis]: https://travis-ci.org/cerbero90/exception-handler
+[link-scrutinizer]: https://scrutinizer-ci.com/g/cerbero90/exception-handler/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/cerbero90/exception-handler
 [link-styleci]: https://styleci.io/repos/:styleci_repo
-[link-downloads]: https://packagist.org/packages/cerbero/:package_name
+[link-downloads]: https://packagist.org/packages/cerbero/exception-handler
 [link-gratipay]: https://gratipay.com/cerbero
 [link-sensiolabs]: https://insight.sensiolabs.com/projects/:sensiolabs_project
 [link-contributors]: ../../contributors

@@ -1,12 +1,12 @@
 {
-    "name": "cerbero/:package_name",
+    "name": "cerbero/exception-handler",
     "type": "library",
-    "description": ":package_description",
+    "description": "Extend the Laravel exception-handler to let service providers register custom exceptions handling.",
     "keywords": [
         "cerbero",
-        ":package_name"
+        "exception-handler"
     ],
-    "homepage": "https://github.com/cerbero90/:package_capital_name",
+    "homepage": "https://github.com/cerbero90/exception-handler",
     "license": "MIT",
     "authors": [
         {
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Cerbero\\:namespace\\": "src"
+            "Cerbero\\ExceptionHandler\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cerbero\\:namespace\\": "tests"
+            "Cerbero\\ExceptionHandler\\": "tests"
         }
     },
     "scripts": {
