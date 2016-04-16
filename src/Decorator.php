@@ -21,7 +21,7 @@ class Decorator implements ExceptionHandler
 
     /**
      * @author    Andrea Marco Sartori
-     * @var        Cerbero\ExceptionHandler\Repository    $handlers    Custom exception handlers bag.
+     * @var        Cerbero\ExceptionHandler\Repository    $handlers    Custom exception handlers repository.
      */
     protected $handlers;
 
