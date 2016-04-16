@@ -49,7 +49,9 @@ class Decorator implements ExceptionHandler
     public function report(Exception $e)
     {
         foreach ($this->handlers->getReportersFor($e) as $reporter) {
-            $reporter($e);
+            if ($report = $reporter($e)) {
+                return $report;
+            }
         }
 
         $this->handler->report($e);
@@ -107,7 +109,9 @@ class Decorator implements ExceptionHandler
     public function renderForConsole($output, Exception $e)
     {
         foreach ($this->handlers->getConsoleRenderersFor($e) as $renderer) {
-            $renderer($e, $output);
+            if ($render = $renderer($e, $output)) {
+                return $render;
+            }
         }
 
         $this->handler->renderForConsole($output, $e);
