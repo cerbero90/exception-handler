@@ -12,21 +12,6 @@
 
 [![SensioLabsInsight][ico-sensiolabs]][link-sensiolabs]
 
-**Note:** Enable the following services for the current package:
-
-- [Packagist](https://packagist.org/packages/submit)
-- [TravisCI](https://travis-ci.org/profile/cerbero90)
-- [ScrutinizerCI](https://scrutinizer-ci.com/g/new)
-- [StyleCI](https://styleci.io/account)
-- [SensioLabs Insight](https://insight.sensiolabs.com/projects/new)
-
-**Note:** Now that StyleCI and SensioLabs are enabled, replace their placeholders with the actual values in this file:
-
-- ```:styleci_repo```
-- ```:sensiolabs_project```
-
-**Note:** Delete all the above notes, including this one.
-
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
 
@@ -78,18 +63,18 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/cerbero90/exception-handler/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/cerbero90/exception-handler.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/cerbero90/exception-handler.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/:styleci_repo/shield
+[ico-styleci]: https://styleci.io/repos/56225627/shield
 [ico-downloads]: https://img.shields.io/packagist/dt/cerbero/exception-handler.svg?style=flat-square
 [ico-gratipay]: https://img.shields.io/gratipay/cerbero.svg?style=flat-square
-[ico-sensiolabs]: https://insight.sensiolabs.com/projects/:sensiolabs_project/big.png
+[ico-sensiolabs]: https://insight.sensiolabs.com/projects/696d2f5d-ea7e-484a-8e06-836dcb462b19/big.png
 
 [link-author]: https://twitter.com/cerbero90
 [link-packagist]: https://packagist.org/packages/cerbero/exception-handler
 [link-travis]: https://travis-ci.org/cerbero90/exception-handler
 [link-scrutinizer]: https://scrutinizer-ci.com/g/cerbero90/exception-handler/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/cerbero90/exception-handler
-[link-styleci]: https://styleci.io/repos/:styleci_repo
+[link-styleci]: https://styleci.io/repos/56225627
 [link-downloads]: https://packagist.org/packages/cerbero/exception-handler
 [link-gratipay]: https://gratipay.com/cerbero
-[link-sensiolabs]: https://insight.sensiolabs.com/projects/:sensiolabs_project
+[link-sensiolabs]: https://insight.sensiolabs.com/projects/696d2f5d-ea7e-484a-8e06-836dcb462b19
 [link-contributors]: ../../contributors
