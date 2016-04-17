@@ -12,23 +12,83 @@
 
 [![SensioLabsInsight][ico-sensiolabs]][link-sensiolabs]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+Custom exception handlers let you define the behavior of your application when a specific exception is thrown.
+
+By default you can add your custom handlers in `app/Exceptions/Handler.php`, but the more handlers you add
+the more this class gets cluttered and difficult to read.
+
+Furthermore it is not possible for an external Laravel package to automatically register how its
+custom exceptions should be handled by the application where it is being installed.
+
+This is where this package comes in handy, it lets you register your custom exception handlers by using
+service providers, so that also external packages may register their own.
+
+> **Please note:** this package leverages the decorators design pattern, which let you keep using the
+> Laravel default handler as you normally would. It just wraps the Handler class to extend its functionalities.
 
 ## Install
 
-Via Composer
+Install this package via Composer
 
 ``` bash
 composer require cerbero/exception-handler
 ```
 
-## Usage
+And then add the service provider in `config/app.php`
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+'providers' => [
+    Cerbero\ExceptionHandler\ServiceProvider::class,
+]
 ```
+
+## Usage
+
+There are 3 types of handlers that can be registered:
+
+ - **Reporters**, they log an exception or report it to an external service (Sentry, Bugsnag...)
+ - **Renderers**, they render an exception into an HTTP response
+ - **Console Renderers**, they render an exception to the console
+
+The following examples show how to register each type of handler, you can use both the service container and
+the `Exceptions` facade, just make sure to register your handlers in the `boot()` method of a service provider.
+
+``` php
+use Exceptions;
+use App\Exceptions\DebugException;
+use App\Exceptions\ArtisanException;
+use Illuminate\Contracts\Validation\ValidationException;
+
+...
+
+public function boot()
+{
+    // register a custom reporter to log all exceptions that are (or extend) DebugException
+    $this->app['exceptions']->reporter(function (DebugException $e) {
+        $this->app['log']->debug($e->getMessage());
+    });
+
+    // register a custom renderer to redirect the user back and show validation errors
+    Exceptions::renderer(function (ValidationException $e, $request) {
+        return back()->withInput()->withErrors($e->errors());
+    });
+
+    // register a custom console renderer to display errors to the console
+    app('exceptions')->consoleRenderer(function (ArtisanException $e, $output) {
+        $output->writeln('<error>' . $e->getMessage() . '</error>');
+        return true;
+    });
+}
+```
+
+A handler is basically a Closure that accepts the exception to handle as first parameter.
+You can register a global handler by omitting the exception type or by just specifying `Exception`.
+
+Despite reporters, renderers also accept a second parameter: the current instance of `Illuminate\Http\Request`
+is passed to renderers, as `Symfony\Component\Console\Output\OutputInterface` is passed to console renderers.
+
+It is also important to note that all the registered handlers of an exception will be called until one of
+them returns a truthy value. When a handler returns any non-falsy value the exception propagation stops.
 
 ## Change log
 
