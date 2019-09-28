@@ -6,9 +6,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
-[![StyleCI][ico-styleci]][link-styleci]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Gratipay][ico-gratipay]][link-gratipay]
 
 [![SensioLabsInsight][ico-sensiolabs]][link-sensiolabs]
 
@@ -116,9 +114,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/cerbero90/exception-handler/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/cerbero90/exception-handler.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/cerbero90/exception-handler.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/56225627/shield
 [ico-downloads]: https://img.shields.io/packagist/dt/cerbero/exception-handler.svg?style=flat-square
-[ico-gratipay]: https://img.shields.io/gratipay/cerbero.svg?style=flat-square
 [ico-sensiolabs]: https://insight.sensiolabs.com/projects/696d2f5d-ea7e-484a-8e06-836dcb462b19/big.png
 
 [link-author]: https://twitter.com/cerbero90
@@ -126,8 +122,6 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-travis]: https://travis-ci.org/cerbero90/exception-handler
 [link-scrutinizer]: https://scrutinizer-ci.com/g/cerbero90/exception-handler/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/cerbero90/exception-handler
-[link-styleci]: https://styleci.io/repos/56225627
 [link-downloads]: https://packagist.org/packages/cerbero/exception-handler
-[link-gratipay]: https://gratipay.com/cerbero
 [link-sensiolabs]: https://insight.sensiolabs.com/projects/696d2f5d-ea7e-484a-8e06-836dcb462b19
 [link-contributors]: ../../contributors
