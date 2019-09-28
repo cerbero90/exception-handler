@@ -90,7 +90,7 @@ class HandlersRepository
         $reflection = new ReflectionFunction($handler);
 
         if (!$params = $reflection->getParameters()) {
-            return true;
+            return false;
         }
 
         return $params[0]->getClass() ? $params[0]->getClass()->isInstance($e) : true;
