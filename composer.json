@@ -1,10 +1,11 @@
 {
     "name": "cerbero/exception-handler",
     "type": "library",
-    "description": "Extend the Laravel exception-handler to let service providers register custom exceptions handling.",
+    "description": "Extend Laravel exception handler to define how to handle custom exceptions via service providers.",
     "keywords": [
-        "cerbero",
-        "exception-handler"
+        "laravel",
+        "exception-handler",
+        "exceptions"
     ],
     "homepage": "https://github.com/cerbero90/exception-handler",
     "license": "MIT",
@@ -17,15 +18,15 @@
         }
     ],
     "require": {
-        "php" : "~5.5|~7.0",
-        "illuminate/support": "^5.2",
-        "illuminate/contracts": "^5.2"
+        "php": "^5.5|^7.0",
+        "illuminate/support": "^5.2|6.0",
+        "illuminate/contracts": "^5.2|6.0"
     },
     "require-dev": {
-        "phpspec/phpspec" : "^2.5",
-        "henrikbjorn/phpspec-code-coverage" : "^2.0",
-        "scrutinizer/ocular": "^1.1",
-        "squizlabs/php_codesniffer": "^2.3"
+        "orchestra/testbench": "^3.2|^4.0",
+        "phpunit/phpunit": "^4.8|^5.0|^6.0|^7.0|^8.0",
+        "mockery/mockery": "^0.9|^1.0",
+        "squizlabs/php_codesniffer": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -38,11 +39,21 @@
         }
     },
     "scripts": {
-        "test": "phpspec run -vvv"
+        "test": "phpunit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Cerbero\\ExceptionHandler\\Providers\\ExceptionHandlerServiceProvider"
+            ]
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
