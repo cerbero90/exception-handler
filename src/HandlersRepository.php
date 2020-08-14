@@ -2,7 +2,7 @@
 
 namespace Cerbero\ExceptionHandler;
 
-use Exception;
+use Throwable;
 use ReflectionFunction;
 
 /**
@@ -68,10 +68,10 @@ class HandlersRepository
     /**
      * Retrieve all reporters handling the given exception
      *
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return array
      */
-    public function getReportersByException(Exception $e)
+    public function getReportersByException(Throwable $e)
     {
         return array_filter($this->reporters, function (callable $handler) use ($e) {
             return $this->handlesException($handler, $e);
@@ -82,10 +82,10 @@ class HandlersRepository
      * Determine whether the given handler can handle the provided exception
      *
      * @param callable $handler
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return bool
      */
-    protected function handlesException(callable $handler, Exception $e)
+    protected function handlesException(callable $handler, Throwable $e)
     {
         $reflection = new ReflectionFunction($handler);
 
@@ -99,10 +99,10 @@ class HandlersRepository
     /**
      * Retrieve all renderers handling the given exception
      *
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return array
      */
-    public function getRenderersByException(Exception $e)
+    public function getRenderersByException(Throwable $e)
     {
         return array_filter($this->renderers, function (callable $handler) use ($e) {
             return $this->handlesException($handler, $e);
@@ -112,10 +112,10 @@ class HandlersRepository
     /**
      * Retrieve all console renderers handling the given exception
      *
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return array
      */
-    public function getConsoleRenderersByException(Exception $e)
+    public function getConsoleRenderersByException(Throwable $e)
     {
         return array_filter($this->consoleRenderers, function (callable $handler) use ($e) {
             return $this->handlesException($handler, $e);
