@@ -2,7 +2,7 @@
 
 namespace Cerbero\ExceptionHandler;
 
-use Exception;
+use Throwable;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 
 /**
@@ -41,12 +41,12 @@ class HandlerDecorator implements ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return mixed
      *
-     * @throws \Exception
+     * @throws \Throwable
      */
-    public function report(Exception $e)
+    public function report(Throwable $e)
     {
         foreach ($this->repository->getReportersByException($e) as $reporter) {
             if ($report = $reporter($e)) {
@@ -72,10 +72,10 @@ class HandlerDecorator implements ExceptionHandler
      * Render an exception into a response.
      *
      * @param \Illuminate\Http\Request  $request
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
      */
-    public function render($request, Exception $e)
+    public function render($request, Throwable $e)
     {
         foreach ($this->repository->getRenderersByException($e) as $renderer) {
             if ($render = $renderer($e, $request)) {
@@ -101,10 +101,10 @@ class HandlerDecorator implements ExceptionHandler
      * Render an exception to the console.
      *
      * @param \Symfony\Component\Console\Output\OutputInterface $output
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return mixed
      */
-    public function renderForConsole($output, Exception $e)
+    public function renderForConsole($output, Throwable $e)
     {
         foreach ($this->repository->getConsoleRenderersByException($e) as $renderer) {
             if ($render = $renderer($e, $output)) {
@@ -129,16 +129,12 @@ class HandlerDecorator implements ExceptionHandler
     /**
      * Determine if the exception should be reported.
      *
-     * @param \Exception $e
+     * @param \Throwable $e
      * @return bool
      */
-    public function shouldReport(Exception $e)
+    public function shouldReport(Throwable $e)
     {
-        if (method_exists($this->defaultHandler, 'shouldReport')) {
-            return $this->defaultHandler->shouldReport($e);
-        }
-
-        return true;
+        return $this->defaultHandler->shouldReport($e);
     }
 
     /**
