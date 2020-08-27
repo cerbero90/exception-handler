@@ -9,18 +9,16 @@
     ],
     "homepage": "https://github.com/cerbero90/exception-handler",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Andrea Marco Sartori",
-            "email": "andrea.marco.sartori@gmail.com",
-            "homepage": "https://github.com/cerbero90",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Andrea Marco Sartori",
+        "email": "andrea.marco.sartori@gmail.com",
+        "homepage": "https://github.com/cerbero90",
+        "role": "Developer"
+    }],
     "require": {
         "php": "^5.5|^7.0",
-        "illuminate/support": "^5.2|^6.0",
-        "illuminate/contracts": "^5.2|^6.0"
+        "illuminate/support": "^7.0",
+        "illuminate/contracts": "^7.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.2|^4.0",
