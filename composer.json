@@ -16,7 +16,7 @@
         "role": "Developer"
     }],
     "require": {
-        "php": "^5.5|^7.0",
+        "php": "^7.2",
         "illuminate/support": "^7.0",
         "illuminate/contracts": "^7.0"
     },
