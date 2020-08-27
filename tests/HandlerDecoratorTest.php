@@ -35,24 +35,6 @@ class HandlerDecoratorTest extends TestCase
     /**
      * @test
      */
-    public function returnsTrueWhenShouldReportIsNotImplementedInDefaultExceptionHandler()
-    {
-        $exception = new Exception;
-        $defaultHandler = Mockery::mock(ExceptionHandler::class)->makePartial();
-
-        if (!method_exists(ExceptionHandler::class, 'shouldReport')) {
-            $handler = new HandlerDecorator($defaultHandler, new HandlersRepository);
-            $this->assertTrue($handler->shouldReport($exception));
-        }
-
-        $this->assertTrue(true);
-
-        Mockery::close();
-    }
-
-    /**
-     * @test
-     */
     public function proxiesCallsToDefaultExceptionHandler()
     {
         $defaultHandler = Mockery::mock(ExceptionHandler::class)

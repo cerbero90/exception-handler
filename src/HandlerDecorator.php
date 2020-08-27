@@ -134,11 +134,7 @@ class HandlerDecorator implements ExceptionHandler
      */
     public function shouldReport(Throwable $e)
     {
-        if (method_exists($this->defaultHandler, 'shouldReport')) {
-            return $this->defaultHandler->shouldReport($e);
-        }
-
-        return true;
+        return $this->defaultHandler->shouldReport($e);
     }
 
     /**
